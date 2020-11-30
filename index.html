@@ -28,7 +28,29 @@
         });
 
     </script>
+ <script>
+    AFRAME.registerComponent('vidhandler', {
+        // ...
+        init: function () {
+            // Set up initial state and variables.
+            this.toggle = false;
+            this.vid = document.querySelector("#kok")
+            this.vid.pause();
+        },
+        tick: function () {
+            if (this.el.object3D.visible == true) {
+                if (!this.toggle) {
+                    this.toggle = true;
+                    this.vid.play();
+                }
+            } else {
+                this.toggle = false;
+                this.vid.pause();
+            }
+        }
+    });
 
+</script>
 
 </head>
 
@@ -40,7 +62,8 @@
     <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/scene.gltf"></a-asset-item>
     <video crossorigin="anonymous" id="BS0i6" controls="true" autoplay="true" loop="true" type="video/mp4" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/IKEAPlace.mp4"> 
         <video crossorigin="anonymous" id="kok" controls="true" autoplay="true" loop="true" type="video/mp4" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/sw.mp4">   
-</a-assets>
+
+    </a-assets>
 
 <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/epicshit.patt">
     <a-box position='0 0.5 0' material='opacity: 0.5; side: double'>
