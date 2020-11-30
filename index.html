@@ -12,8 +12,6 @@
                 // Set up initial state and variables.
                 this.toggle = false;
                 this.vid = document.querySelector("#BS0i6")
-                this.vid2 = document.querySelector("#kok")
-                this.vid2.pause();
                 this.vid.pause();
             },
             tick: function () {
@@ -21,18 +19,16 @@
                     if (!this.toggle) {
                         this.toggle = true;
                         this.vid.play();
-                        this.vid2.play();
                     }
                 } else {
                     this.toggle = false;
                     this.vid.pause();
-                    this.vid2.pause();
                 }
             }
         });
 
     </script>
- 
+
 
 </head>
 
@@ -42,10 +38,8 @@
         
 <a-assets>
     <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/scene.gltf"></a-asset-item>
-    <video crossorigin="anonymous" id="BS0i6" controls="true" autoplay="true" loop="true" type="video/mp4" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/IKEAPlace.mp4"> 
-        <video crossorigin="anonymous" id="kok" controls="true" autoplay="true" loop="true" type="video/mp4" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/sw.mp4">   
-
-    </a-assets>
+    <video crossorigin="anonymous" id="BS0i6" controls="true" autoplay="true" loop="true" type="video/mp4" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/IKEAPlace.mp4">  
+</a-assets>
 
 <a-marker type="pattern" preset="custom" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/epicshit.patt">
     <a-box position='0 0.5 0' material='opacity: 0.5; side: double'>
@@ -58,13 +52,6 @@
         <a-video  src="#BS0i6" position="0 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
     </a-box>
 </a-marker>
-
-<a-marker vidhandler preset="custom" type="pattern" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/pattern-marker.patt">
-    <a-box position='0 0.5 0' material='opacity: 0.5; side: double'>
-        <a-video  src="#kok" position="0 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
-    </a-box>
-</a-marker>
-
 
 <a-marker id="memarker" preset="hiro">
     <a-gltf-model src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/scene.gltf" position="0 0 0" rotation="0 0 0" scale="0.03 0.03 0.03" animation-mixer="clip: Take 001; loop:repeat"> </a-gltf-model>
