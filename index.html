@@ -12,6 +12,8 @@
                 // Set up initial state and variables.
                 this.toggle = false;
                 this.vid = document.querySelector("#BS0i6")
+                this.vid2 = document.querySelector("#kok")
+                this.vid2.pause();
                 this.vid.pause();
             },
             tick: function () {
@@ -19,38 +21,18 @@
                     if (!this.toggle) {
                         this.toggle = true;
                         this.vid.play();
+                        this.vid2.play();
                     }
                 } else {
                     this.toggle = false;
                     this.vid.pause();
+                    this.vid2.pause();
                 }
             }
         });
 
     </script>
- <script>
-    AFRAME.registerComponent('vidhandler', {
-        // ...
-        init: function () {
-            // Set up initial state and variables.
-            this.toggle = false;
-            this.vid = document.querySelector("#kok")
-            this.vid.pause();
-        },
-        tick: function () {
-            if (this.el.object3D.visible == true) {
-                if (!this.toggle) {
-                    this.toggle = true;
-                    this.vid.play();
-                }
-            } else {
-                this.toggle = false;
-                this.vid.pause();
-            }
-        }
-    });
-
-</script>
+ 
 
 </head>
 
