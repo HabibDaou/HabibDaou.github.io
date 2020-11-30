@@ -44,9 +44,22 @@
             </a-box>
         </a-marker>
        
+
+
+        <a-marker vidhandler preset="custom" type="pattern" url="https://raw.githubusercontent.com/arjanvanbekkum/arjanvanbekkum.github.io/master/augmentedreality/xmarker.patt">
+            <a-box position='0 0.5 0' material='opacity: 0.5; side: double'>
+                <a-video  src="#BS0i6" position="0 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
+            </a-box>
+        </a-marker>
+        
+
         </a-scene>
 
-        <a-video src="#videoID" width="1.4375" height="1" rotation="270 0 0"></a-video>
-
+        <script>
+            window.addEventListener('click', function () {
+            var v = document.querySelector('#BS0i6');
+            v.play();
+            });
+        </script>
     </body>
         </html>
