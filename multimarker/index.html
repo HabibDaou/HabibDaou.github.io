@@ -7,6 +7,24 @@
 	 <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
 
 	  <script src="js/multiMarkersName.js"></script>
+	  <script>
+	  AFRAME.registerComponent('vidhandler', {
+		init: function () {
+		  this.toggle = false;
+		  document.querySelector("#BS0i6").pause(); //reference to the video
+		},
+		tick:function(){  
+		 if(document.querySelector("a-marker").object3D.visible == true){
+		   if(!this.toggle){
+			 this.toggle = true;
+			 document.querySelector("#BS0i6").play();
+		   }
+		 }else{
+		   this.toggle = false;
+		   document.querySelector("#BS0i6").pause();
+		 }
+		}
+	  });</script>
 	</head>
 	<body>
 	<a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput: true"

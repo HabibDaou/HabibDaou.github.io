@@ -60,20 +60,3 @@ AFRAME.registerComponent('registerevents', {
 		},
 	});
 
-AFRAME.registerComponent('vidhandler', {
-		init: function () {
-		  this.toggle = false;
-		  document.querySelector("#BS0i6").pause(); //reference to the video
-		},
-		tick:function(){  
-		 if(document.querySelector("a-marker").object3D.visible == true){
-		   if(!this.toggle){
-			 this.toggle = true;
-			 document.querySelector("#BS0i6").play();
-		   }
-		 }else{
-		   this.toggle = false;
-		   document.querySelector("#BS0i6").pause();
-		 }
-		}
-	  });
