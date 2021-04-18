@@ -5,53 +5,15 @@
     <meta name="description" content="Multi Markers AR - Playing the Archive - CASA UCL">
 	 <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 	 <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
-	 <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-	 <script>
-        AFRAME.registerComponent('vidhandler', {
-            // ...
-            init: function () {
-                // Set up initial state and variables.
-                this.toggle = false;
-                this.vid = document.querySelector("#BS0i6")
-                this.vid.pause();
-           
-            },
-            tick: function () {
-                if (this.el.object3D.visible == true) {
-                    if (!this.toggle) {
-                        this.toggle = true;
-                        this.vid.play();
-                
-                    }
-                } else {
-                    this.toggle = false;
-                    this.vid.pause();
-               
-                }
-            }
-        });
 
-    </script>   
+	  <script src="js/multiMarkersName.js"></script>
 	</head>
 	<body>
 	<a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput: true"
   embedded arjs='debugUIEnabled: false; sourceType: webcam; patternRatio: 0.85; trackingMethod: best;'>
-         
-<a-assets>
-    <video crossorigin="anonymous" id="BS0i6" controls="true" autoplay="true" loop="true" type="video/mp4" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/IKEAPlace.mp4">  
-</a-assets>
-
-<a-marker id="memarker1" vidhandler="video: #BS0i6" preset="custom" type="pattern" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/xmarker.patt">
-    <a-box position='0 0.5 0' material='opacity: 0.5; side: double'>
-        <a-video  src="#BS0i6" position="0 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
-    </a-box>
-    
-</a-marker>
     	<a-entity id='userCamera' camera>
 		<a-cursor> </a-cursor>
     	</a-entity>
-
 	</a-scene>
-
 	</body>
 	</html>
