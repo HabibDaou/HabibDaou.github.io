@@ -5,26 +5,33 @@
     <meta name="description" content="Multi Markers AR - Playing the Archive - CASA UCL">
 	 <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
 	 <script src="https://raw.githack.com/jeromeetienne/AR.js/2.0.8/aframe/build/aframe-ar.js"></script>
+	 <script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+	 <script>
+        AFRAME.registerComponent('vidhandler', {
+            // ...
+            init: function () {
+                // Set up initial state and variables.
+                this.toggle = false;
+                this.vid = document.querySelector("#BS0i6")
+                this.vid.pause();
+           
+            },
+            tick: function () {
+                if (this.el.object3D.visible == true) {
+                    if (!this.toggle) {
+                        this.toggle = true;
+                        this.vid.play();
+                
+                    }
+                } else {
+                    this.toggle = false;
+                    this.vid.pause();
+               
+                }
+            }
+        });
 
-	  <script src="js/multiMarkersName.js"></script>
-	  <script>
-	  AFRAME.registerComponent('vidhandler', {
-		init: function () {
-		  this.toggle = false;
-		  document.querySelector("#BS0i6").pause(); //reference to the video
-		},
-		tick:function(){  
-		 if(document.querySelector("a-marker").object3D.visible == true){
-		   if(!this.toggle){
-			 this.toggle = true;
-			 document.querySelector("#BS0i6").play();
-		   }
-		 }else{
-		   this.toggle = false;
-		   document.querySelector("#BS0i6").pause();
-		 }
-		}
-	  });</script>
+    </script>   
 	</head>
 	<body>
 	<a-scene markers_start vr-mode-ui="enabled: false" color-space="sRGB" renderer="gammaOutput: true"
