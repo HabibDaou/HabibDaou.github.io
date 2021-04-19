@@ -9,6 +9,10 @@
 
 </head>
 
+<div id="profile" style="color: greenyellow; width: 300px; height: 300px; background-color: red; position: absolute; top: 00px; left: 0;">
+    Hello world!
+    </div>
+    
 <body style='margin : 0px; overflow: hidden;'>
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 
@@ -35,10 +39,8 @@
 </a-marker>
 
 <a-marker id="memarker" preset="hiro">
-    <a-image></a-image>
-    <a-entity ><html>
-        <h1>HELLO</h1>
-    </html> </a-entity>
+    <a-plane position="0.43 1.17 -1.48" rotation="-72 85 -88" scale="1 1 1" material="shader:html;target: #profile;"></a-plane>
+
 </a-marker>
 
 <a-entity camera></a-entity>
