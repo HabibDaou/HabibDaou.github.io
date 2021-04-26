@@ -7,9 +7,10 @@
 <!-- support 3D text -->
 <script src="js/aframe-text-geometry-component.min.js"></script>
 <script>
-	 document.getElementById("myButton").onclick = function () {
+	window.onload = function(){ 
+		document.getElementById("myButton").onclick = function () {
         location.href = "www.youtube.com";
-    };
+    };};
 </script>
 <body style="margin: 0px; overflow: hidden;">
 
@@ -25,10 +26,10 @@
 		
 		<!-- positioning a plane directly below text for increased visibility; need to adjust position to avoid z-fighting.  -->
 		<a-plane color="white" rotation="-90 0 0" position="0 -0.25 0" width="3" material="transparent: true; opacity: 0.90"></a-plane>
-
+<div id="myButton" >
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-text id="myButton" value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" align="center" scale="2 2 2"></a-text>
-		
+		<a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" align="center" scale="2 2 2"></a-text>
+	</div>
 		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
 		<!-- <a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="black" rotation="-90 0 0" align="center" scale="2 2 2" position="0.01 -0.2 0"></a-text> -->
 
