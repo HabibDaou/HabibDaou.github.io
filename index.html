@@ -28,13 +28,25 @@
           }
         });
       </script>
-      
+      <script>
+   
+    window.onload = function () {
+      document
+        .querySelector(".img")
+        .addEventListener("click", function () {
+          // here you can change also a-scene or a-entity properties, like
+          // changing your 3D model source, size, position and so on
+          // or you can just open links, trigger actions...
+          alert("Hi there!");
+        });
+    };
+
+      </script>
 </head>
 
     
-<body style='margin : 0px; overflow: hidden;'>
+<body style='margin : 0px; overflow: hidden;'!important>
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-
 <a-assets>
     <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/scene.gltf"></a-asset-item>
     <video crossorigin="anonymous" id="BS0i6" controls="true" autoplay="true" loop="true" type="video/mp4" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/IKEAPlace.mp4">  
@@ -57,10 +69,10 @@
 </a-marker>
 
 <a-marker id="memarker" preset="hiro">
-    <a-box color="#EF2D5E" position="0 0.5 0"  change-color-on-hover="color: blue"></a-box>
+      <a-image width="1" height="1" src="#transpImage"></a-image>
 </a-marker>
 
-<a-entity camera><a-cursor></a-cursor></a-entity>
+<a-entity camera></a-entity>
 
 </a-scene>
 
