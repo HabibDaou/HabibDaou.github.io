@@ -7,7 +7,17 @@
 <!-- support 3D text -->
 <script src="js/aframe-text-geometry-component.min.js"></script>
 
-
+<script>
+AFRAME.registerComponent('cursor-listener', {
+  init: function () {
+  
+    this.el.addEventListener('click', function (evt) {
+      console.log('I was clicked at: ');
+	  window.open("work.html")
+    });
+  }
+});
+</script>
 <body style="margin: 0px; overflow: hidden;">
 
 <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;" cursor="rayOrigin: mouse">
@@ -18,13 +28,11 @@
 	</a-assets>
 
 	<!-- 2D text -->
-	<a-marker  emitevents="true" id="animated-marker" type="pattern" url="data/kanji.patt">
+	<a-marker cursor-listener emitevents="true" id="animated-marker" type="pattern" url="data/kanji.patt" raycaster="far: 20; interval: 1000; objects: .clickable">
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-entity link="on: click; href: https://www.youtube.com"  raycaster="far: 20; interval: 1000; objects: .clickable">
 		
 			<a-text class ="box"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
 
-		</a-entity>
 
 		
 		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
