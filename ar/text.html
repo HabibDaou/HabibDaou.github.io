@@ -13,7 +13,7 @@ AFRAME.registerComponent('cursor-listener', {
   
     this.el.addEventListener('click', function (evt) {
       console.log('I was clicked at: ');
-	  window.location="work.html"
+	  window.open("work.html")
     });
   }
 });
@@ -28,7 +28,7 @@ AFRAME.registerComponent('cursor-listener', {
 	</a-assets>
 
 	<!-- 2D text -->
-	<a-marker type="pattern" url="data/kanji.patt">
+	<a-marker cursor-listener emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type="pattern" url="data/kanji.patt">
 		
 		<!-- positioning a plane directly below text for increased visibility; need to adjust position to avoid z-fighting.  -->
 
@@ -44,7 +44,6 @@ AFRAME.registerComponent('cursor-listener', {
 	</a-marker>
 
 	<!-- 3D text -->
-	<a-marker cursor-listener emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type="pattern" url="data/kanji.patt">
 
 		<!-- 
 			using aframe-text-geometry component
