@@ -13,7 +13,10 @@ AFRAME.registerComponent('cursor-listener', {
   
     this.el.addEventListener('click', function (evt) {
       console.log('I was clicked at: ');
-	  window.open("work.html")
+	  window.open(
+  'https://youtube.com',
+  '_blank' // <- This is what makes it open in a new window.
+);
     });
   }
 });
@@ -30,7 +33,7 @@ AFRAME.registerComponent('cursor-listener', {
 	<!-- 2D text -->
 	<a-marker cursor-listener emitevents="true" id="animated-marker" type="pattern" url="data/kanji.patt">
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-entity link="on: click; href: https://aframe-aincraft.glitch.me"  raycaster="far: 20; interval: 1000; objects: .clickable">
+		<a-entity  raycaster="far: 20; interval: 1000; objects: .clickable">
 		
 			<a-text class ="box"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
 
