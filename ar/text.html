@@ -7,6 +7,11 @@
 <!-- support 3D text -->
 <script src="js/aframe-text-geometry-component.min.js"></script>
 
+<script>
+	function myFunction() {
+  window.open("https://www.w3schools.com");
+}
+</script>
 <body style="margin: 0px; overflow: hidden;">
 
 <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
@@ -22,7 +27,7 @@
 		<!-- positioning a plane directly below text for increased visibility; need to adjust position to avoid z-fighting.  -->
 
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2"></a-text>
+		<a-text onclick="myFunction()" value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
 		
 		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
 		<!-- <a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="black" rotation="-90 0 0" align="center" scale="2 2 2" position="0.01 -0.2 0"></a-text> -->

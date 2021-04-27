@@ -51,7 +51,6 @@ AFRAME.registerComponent('registerevents', {
 			marker.addEventListener("markerFound", ()=> {
 				var markerId = marker.id;
 				console.log('Marker Found: ', markerId);
-				window.open("https://www.w3schools.com");
 
 			});
 
