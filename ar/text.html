@@ -6,7 +6,15 @@
 
 <!-- support 3D text -->
 <script src="js/aframe-text-geometry-component.min.js"></script>
-
+<script>
+	AFRAME.registerComponent('cursor-listener', {
+  init: function () {
+    this.el.addEventListener('click', function (evt) {
+      console.log('I was clicked at: ', evt.detail.intersection.point);
+    });
+  }
+});
+</script>
 <body style="margin: 0px; overflow: hidden;">
 
 <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
