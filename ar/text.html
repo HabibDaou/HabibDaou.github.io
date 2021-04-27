@@ -58,10 +58,10 @@ AFRAME.registerComponent('cursor-listener', {
 	</a-assets>
 
 	<!-- 2D text -->
-	<a-marker vidhandler="video: #BS0i6" cursor-listener emitevents="true" id="animated-marker" type="pattern" url="data/kanji.patt">
+	<a-marker vidhandler="video: #BS0i6" id="animated-marker" type="pattern" url="data/kanji.patt">
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
 		<a-entity  raycaster="far: 20; interval: 1000; objects: .clickable">
-			<a-text class ="box"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
+			<a-text  cursor-listener emitevents="true"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
 		</a-entity>
 
 			<a-box position='-1 0.5 0' material='opacity: 0.5; side: double'>
