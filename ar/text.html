@@ -28,9 +28,9 @@ AFRAME.registerComponent('cursor-listener', {
 	</a-assets>
 
 	<!-- 2D text -->
-	<a-marker  emitevents="true" id="animated-marker" type="pattern" url="data/kanji.patt">
+	<a-marker cursor-listener emitevents="true" id="animated-marker" type="pattern" url="data/kanji.patt">
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-entity cursor-listener raycaster="far: 20; interval: 1000; objects: .clickable">
+		<a-entity link="on: click; href: https://aframe-aincraft.glitch.me"  raycaster="far: 20; interval: 1000; objects: .clickable">
 		
 			<a-text class ="box"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
 
