@@ -33,7 +33,7 @@ AFRAME.registerComponent('cursor-listener', {
 		<!-- positioning a plane directly below text for increased visibility; need to adjust position to avoid z-fighting.  -->
 
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-text cursor raycaster="far: 20; interval: 1000; objects: .clickable" value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
+		<a-text class ="box" cursor raycaster="far: 20; interval: 1000; objects: .clickable" value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
 		
 		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
 		<!-- <a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="black" rotation="-90 0 0" align="center" scale="2 2 2" position="0.01 -0.2 0"></a-text> -->
@@ -53,7 +53,7 @@ AFRAME.registerComponent('cursor-listener', {
 		 -->
 		
 
-	<a-entity camera ></a-entity>
+	<a-entity camera raycaster="objects: .box"  ></a-entity>
     
 </a-scene>
 </body>
