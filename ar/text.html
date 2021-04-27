@@ -20,7 +20,7 @@
 
 <body style="margin: 0px; overflow: hidden;">
 
-<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;" cursor="rayOrigin: mouse">
 
 	<a-assets>
 		<a-asset-item id="exoFont" src="fonts/exoBlack.typeface.json"></a-asset-item>
@@ -28,11 +28,11 @@
 	</a-assets>
 
 	<!-- 2D text -->
-	<a-marker type="pattern" url="data/kanji.patt" for_a_marker>
+	<a-marker type="pattern" url="data/kanji.patt"  for_a_marker>
 		
 		<!-- positioning a plane directly below text for increased visibility; need to adjust position to avoid z-fighting.  -->
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-text id="text" value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0"  scale="2 2 2"></a-text>
+		<a-text  for_a_marker id="text" value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0"  scale="2 2 2"></a-text>
 		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
 		<!-- <a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="black" rotation="-90 0 0" align="center" scale="2 2 2" position="0.01 -0.2 0"></a-text> -->
 
@@ -57,7 +57,13 @@
 
 	</a-marker>
 
-    <a-entity camera></a-entity>
+    <a-entity camera>
+		<a-entity cursor="fuse: true; fuseTimeout: 500"
+        position="0 0 -1"
+        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+        material="color: black; shader: flat">
+  </a-entity>
+	</a-entity>
     
 </a-scene>
 </body>
