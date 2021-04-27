@@ -50,6 +50,9 @@ AFRAME.registerComponent('registerevents', {
 
 			marker.addEventListener("markerFound", ()=> {
 				var markerId = marker.id;
+				marker.addEventListener('click', () => {
+					alert('Clicked!')
+				});
 				console.log('Marker Found: ', markerId);
 			});
 
