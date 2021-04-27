@@ -20,7 +20,7 @@ AFRAME.registerComponent('cursor-listener', {
 </script>
 <body style="margin: 0px; overflow: hidden;">
 
-<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
+<a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;" cursor="rayOrigin: mouse">
 
 	<a-assets>
 		<a-asset-item id="exoFont" src="fonts/exoBlack.typeface.json"></a-asset-item>
@@ -28,14 +28,11 @@ AFRAME.registerComponent('cursor-listener', {
 	</a-assets>
 
 	<!-- 2D text -->
-	<a-marker cursor-listener emitevents="true" cursor="rayOrigin: mouse" id="animated-marker" type="pattern" url="data/kanji.patt">
-		
-		<!-- positioning a plane directly below text for increased visibility; need to adjust position to avoid z-fighting.  -->
-
+	<a-marker cursor-listener emitevents="true" id="animated-marker" type="pattern" url="data/kanji.patt">
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-entity link="on: click; href: https://aframe-aincraft.glitch.me">
+		<a-entity link="on: click; href: https://aframe-aincraft.glitch.me"  raycaster="far: 20; interval: 1000; objects: .clickable">
 		
-			<a-text class ="box" cursor raycaster="far: 20; interval: 1000; objects: .clickable" value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
+			<a-text class ="box"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
 
 		</a-entity>
 
@@ -58,8 +55,8 @@ AFRAME.registerComponent('cursor-listener', {
 		 -->
 		
 
-	<a-entity camera raycaster="objects: .box"  ></a-entity>
-    
+		 <a-entity camera cursor="fuse: true; fuseTimeout: 500" position="0 0 -1" geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" material="color: black; shader: flat">
+		</a-entity>    
 </a-scene>
 </body>
 </html>
