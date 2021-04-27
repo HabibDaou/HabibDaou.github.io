@@ -9,9 +9,16 @@
 <script>
 	AFRAME.registerComponent('cursor-listener', {
   init: function () {
-    this.el.addEventListener('click', function (evt) {
-      console.log('I was clicked at: ', evt.detail.intersection.point);
-    });
+	const marker = this.el;
+
+marker.addEventListener("markerFound", ()=> {
+	console.log('Marker Found: ');
+
+});
+
+marker.addEventListener("markerLost",() =>{
+	console.log('Marker Lost: ');
+});
   }
 });
 </script>
@@ -25,12 +32,12 @@
 	</a-assets>
 
 	<!-- 2D text -->
-	<a-marker type="pattern" url="data/kanji.patt">
+	<a-marker type="pattern" url="data/kanji.patt" cursor-listener="">
 		
 		<!-- positioning a plane directly below text for increased visibility; need to adjust position to avoid z-fighting.  -->
 
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
-		<a-text cursor-listener value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
+		<a-text  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
 		
 		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
 		<!-- <a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="black" rotation="-90 0 0" align="center" scale="2 2 2" position="0.01 -0.2 0"></a-text> -->
