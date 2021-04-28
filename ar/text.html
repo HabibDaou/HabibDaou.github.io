@@ -61,11 +61,11 @@ AFRAME.registerComponent('cursor-listener', {
 	<a-marker vidhandler="video: #BS0i6" id="animated-marker" type="pattern" url="data/kanji.patt">
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
 		<a-entity  raycaster="far: 20; interval: 1000; objects: .clickable">
-			<a-text width=1 height=1 cursor-listener emitevents="true"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
+			<a-text  cursor-listener emitevents="true"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
 		</a-entity>
 
-			<a-box position='-1 0.5 0' material='opacity: 0.5; side: double'  width=1 height=1>
-				<a-video  src="#BS0i6" position="0 0.5 0" rotation="270 0 0" play="true" width=1 height=1></a-video>
+			<a-box position='-1 0.5 0' material='opacity: 0.5; side: double' width=1 height=1>
+				<a-video  src="#BS0i6" position="-1 0.5 0" rotation="270 0 0" play="true" width=1 height=1 ></a-video>
 			</a-box>
 		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
 		<!-- <a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="black" rotation="-90 0 0" align="center" scale="2 2 2" position="0.01 -0.2 0"></a-text> -->
