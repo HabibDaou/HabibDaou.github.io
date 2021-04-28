@@ -38,8 +38,10 @@ AFRAME.registerComponent('pdflink', {
   
     this.el.addEventListener('click', function (evt) {
       console.log('I was clicked at: ');
-var c=window.open('https://get.adobe.com/fr/reader/', '_blank');
-c.document.write('Loading preview...');
+	  window.open(
+  'https://get.adobe.com/fr/reader/',
+  '_blank' // <- This is what makes it open in a new window.
+);
     });
   }
 });
@@ -48,8 +50,9 @@ AFRAME.registerComponent('cursor-listener', {
   
     this.el.addEventListener('click', function (evt) {
       console.log('I was clicked at: ');
-var c=window.open('https://youtube.com', '_blank');
-c.document.write('Loading preview...');
+	  window.open(
+  'https://youtube.com', '_blank'
+);
     });
   }
 });
