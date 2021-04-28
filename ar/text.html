@@ -8,6 +8,31 @@
 <script src="js/aframe-text-geometry-component.min.js"></script>
 
 <script>
+	
+AFRAME.registerComponent('vidhandler', {
+    // ...
+    init: function () {
+        // Set up initial state and variables.
+        this.toggle = false;
+        this.vid = document.querySelector("#BS0i6")
+        this.vid.pause();
+   
+    },
+    tick: function () {
+        if (this.el.object3D.visible == true) {
+            if (!this.toggle) {
+                this.toggle = true;
+                this.vid.play();
+        
+            }
+        } else {
+            this.toggle = false;
+            this.vid.pause();
+       
+        }
+    }
+});
+ 
 AFRAME.registerComponent('cursor-listener', {
   init: function () {
   
@@ -33,7 +58,7 @@ AFRAME.registerComponent('cursor-listener', {
 	</a-assets>
 
 	<!-- 2D text -->
-	<a-marker  id="animated-marker" type="pattern" url="data/kanji.patt">
+	<a-marker vidhandler="video: #BS0i6" id="animated-marker" type="pattern" url="data/kanji.patt">
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
 		<a-entity  raycaster="far: 20; interval: 1000; objects: .clickable">
 			<a-text cursor-listener  emitevents="true" class ="box"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
