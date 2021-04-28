@@ -13,6 +13,7 @@ AFRAME.registerComponent('vidhandler', {
     // ...
     init: function () {
         // Set up initial state and variables.
+		
         this.toggle = false;
         this.vid = document.querySelector("#BS0i6")
         this.vid.pause();
@@ -21,8 +22,10 @@ AFRAME.registerComponent('vidhandler', {
     tick: function () {
         if (this.el.object3D.visible == true) {
             if (!this.toggle) {
-                this.toggle = true;
-                this.vid.play();
+				this.el.addEventListener('click', function (evt) {
+					this.toggle = true;
+                this.vid.play();;
+            });
         
             }
         } else {
@@ -58,7 +61,7 @@ AFRAME.registerComponent('cursor-listener', {
 	</a-assets>
 
 	<!-- 2D text -->
-	<a-marker vidhandler="video: #BS0i6" id="animated-marker" type="pattern" url="data/kanji.patt">
+	<a-marker id="animated-marker" type="pattern" url="data/kanji.patt">
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
 		<a-entity  raycaster="far: 20; interval: 1000; objects: .clickable">
 			<a-text cursor-listener  emitevents="true" class ="box"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
@@ -67,8 +70,8 @@ AFRAME.registerComponent('cursor-listener', {
 		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
 		<!-- <a-text value="Hello, world!" font="fonts/Exo2Bold.fnt" color="black" rotation="-90 0 0" align="center" scale="2 2 2" position="0.01 -0.2 0"></a-text> -->
 	<a-entity>
-		<a-video  src="#BS0i6" position="-1 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
-	</a-entity>
+		<a-video vidhandler="video: #BS0i6"   src="#BS0i6" position="-1 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
+</a-entity>
 		
 		<!-- avoiding z-fighting is difficult; may want to render canvas to text instead -->
 
