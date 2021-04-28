@@ -32,7 +32,19 @@ AFRAME.registerComponent('vidhandler', {
         }
     }
 });
- 
+  
+AFRAME.registerComponent('pdflink', {
+  init: function () {
+  
+    this.el.addEventListener('click', function (evt) {
+      console.log('I was clicked at: ');
+	  window.open(
+  'https://google.com',
+  '_blank' // <- This is what makes it open in a new window.
+);
+    });
+  }
+});
 AFRAME.registerComponent('cursor-listener', {
   init: function () {
   
@@ -61,7 +73,7 @@ AFRAME.registerComponent('cursor-listener', {
 	<a-marker vidhandler="video: #BS0i6" id="animated-marker" type="pattern" url="data/kanji.patt">
 		<!-- for more properties, see https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
 		<a-entity  raycaster="far: 20; interval: 1000; objects: .clickable">
-			<a-text cursor-listener  emitevents="true" class ="box"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="2 2 2" ></a-text>
+			<a-text cursor-listener  emitevents="true" class ="box"  value="Hello, world!" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="1 1 1" ></a-text>
 		</a-entity>
 
 		<!-- positioning a second copy to attempt drop-shadow effect; need to adjust position to avoid z-fighting -->
@@ -71,7 +83,9 @@ AFRAME.registerComponent('cursor-listener', {
 		</a-box>
 		
 		<!-- avoiding z-fighting is difficult; may want to render canvas to text instead -->
-
+		<a-entity  raycaster="far: 20; interval: 1000; objects: .clickable">
+			<a-text pdflink position="0 -1 0"  emitevents="true" class ="box"  value="Link Pdf" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="1 1 1" ></a-text>
+		</a-entity>
 	</a-marker>
 
 	<!-- 3D text -->
