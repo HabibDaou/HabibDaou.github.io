@@ -84,7 +84,7 @@ AFRAME.registerComponent('cursor-listener', {
 		
 		<!-- avoiding z-fighting is difficult; may want to render canvas to text instead -->
 		<a-entity  raycaster="far: 20; interval: 1000; objects: .clickable">
-			<a-text pdflink position="0 -1 0"  emitevents="true" class ="box"  value="Link Pdf" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="1 1 1" ></a-text>
+			<a-text pdflink position="0 -2 0"  emitevents="true" class ="box"  value="Link Pdf" font="fonts/Exo2Bold.fnt" color="red" rotation="-90 0 0" scale="1 -1 1" ></a-text>
 		</a-entity>
 	</a-marker>
 
