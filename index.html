@@ -48,19 +48,17 @@
 <body style='margin : 0px; overflow: hidden;'!important>
     <a-scene embedded arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
 <a-assets>
-    <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/scene2.gltf"></a-asset-item>
+    <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/scene.gltf"></a-asset-item>
     <video crossorigin="anonymous" id="BS0i6" controls="true" autoplay="true" loop="true" type="video/mp4" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/IKEAPlace.mp4">  
     <video crossorigin="anonymous" id="BS0i7" controls="true" autoplay="true" loop="true" type="video/mp4" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/videoplayback.mp4">  
         <img id="transpImage" src="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/Photo.jpg">
 
 </a-assets>
 
-<a-marker id="memarker2"  preset="custom" type="pattern" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/pattern.patt">
-  <a-entity   position="0 0 0" 
-  rotation="0 0 0"
-  scale="0.10 0.10 0.10"
-  gltf-model="#animated-asset" >
-</a-entity>
+<a-marker id="memarker2" vidhandler2="video: #BS0i7" preset="custom" type="pattern" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/pattern.patt">
+    <a-box position='0 0.5 0' material='opacity: 0.1; side: double'>
+        <a-video  src="#BS0i7" position="0 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
+    </a-box>
 </a-marker>
 
 <a-marker id="memarker1" vidhandler="video: #BS0i6" preset="custom" type="pattern" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/epicshit.patt">
@@ -68,8 +66,8 @@
         <a-video  src="#BS0i6" position="0 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
     </a-box>
     
- 
 </a-marker>
+
 <a-marker id="memarker" preset="hiro">
       <a-image width="1" height="1" src="#transpImage"></a-image>
 </a-marker>
