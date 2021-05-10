@@ -9,13 +9,23 @@
 
     <a-assets>
         <a-asset-item id="tree" src="test/scene2.gltf"></a-asset-item>
+        <a-asset-item id="tree2" src="test/game/scene.gltf"></a-asset-item>
+
 	</a-assets>
     
-    <a-marker type="pattern" url="data/kanji.patt">
+    <a-marker type="pattern" c url="data/kanji.patt">
         <a-entity   position="0 0 0" 
                     rotation="0 0 0"
                     scale="0.10 0.10 0.10"
                     gltf-model="#tree" >
+        </a-entity>
+    </a-marker>
+        
+    <a-marker  preset="custom" type="pattern"   url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/pattern.patt">
+        <a-entity   position="0 0 0" 
+                    rotation="0 0 0"
+                    scale="0.10 0.10 0.10"
+                    gltf-model="#tree2" >
         </a-entity>
     </a-marker>
     
