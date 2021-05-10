@@ -55,10 +55,12 @@
 
 </a-assets>
 
-<a-marker id="memarker2" vidhandler2="video: #BS0i7" preset="custom" type="pattern" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/pattern.patt">
-    <a-box position='0 0.5 0' material='opacity: 0.1; side: double'>
-        <a-video  src="#BS0i7" position="0 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
-    </a-box>
+<a-marker id="memarker2"  preset="custom" type="pattern" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/pattern.patt">
+  <a-entity   position="0 0 0" 
+  rotation="0 0 0"
+  scale="0.10 0.10 0.10"
+  gltf-model="#animated-asset" >
+</a-entity>
 </a-marker>
 
 <a-marker id="memarker1" vidhandler="video: #BS0i6" preset="custom" type="pattern" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/epicshit.patt">
@@ -66,13 +68,7 @@
         <a-video  src="#BS0i6" position="0 0.5 0" rotation="270 0 0" play="true" width=2 height=2 ></a-video>
     </a-box>
     
-</a-marker>
-<a-marker type="pattern" url="https://raw.githubusercontent.com/HabibDaou/HabibDaou.github.io/master/pattern-1606142289071135.patt">
-  <a-entity   position="0 0 0" 
-              rotation="0 0 0"
-              scale="0.10 0.10 0.10"
-              gltf-model="#animated-asset" >
-  </a-entity>
+ 
 </a-marker>
 <a-marker id="memarker" preset="hiro">
       <a-image width="1" height="1" src="#transpImage"></a-image>
