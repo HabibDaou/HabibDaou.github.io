@@ -4,12 +4,28 @@
 <script src="js/aframe.min.js"></script>
 <script src="js/aframe-ar.js"></script>
 <body style="margin: 0px; overflow: hidden;">
-
+    <script>
+        AFRAME.registerComponent('modify-materials', {
+          init: function () {
+            // Wait for model to load.
+            this.el.addEventListener('model-loaded', () => {
+              // Grab the mesh / scene.
+              const obj = this.el.getObject3D('mesh');
+              // Go over the submeshes and modify materials we want.
+              obj.traverse(node => {
+                if (node.name.indexOf('ship') !== -1) {
+                  node.material.color.set('red');
+                }
+              });
+            });
+          }
+        });
+      </script>
 <a-scene embedded vr-mode-ui="enabled: false;" arjs="debugUIEnabled: false;">
 
     <a-assets>
         <a-asset-item id="tree" src="test/scene2.gltf"></a-asset-item>
-        <a-asset-item id="tree2" src="moon_walk/scene.gltf"></a-asset-item>
+        <a-asset-item id="tree2" src="game/scene.gltf"></a-asset-item>
 
 	</a-assets>
     
@@ -17,6 +33,7 @@
         <a-entity   position="0 0 0" 
                     rotation="0 0 0"
                     scale="0.01 0.01 0.01"
+                    modify-materials
                     gltf-model="#tree2" >
         </a-entity>
     </a-marker>
